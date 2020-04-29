@@ -1,6 +1,7 @@
 package timekit
 
 import (
+	"math"
 	"math/rand"
 	"sort"
 	"time"
@@ -98,6 +99,18 @@ func IsTimeAfterToday(t time.Time) bool {
 	}
 
 	return false
+}
+
+func GetRandomDurationUpOrDown(duration time.Duration, deltaPercent float64) (ret time.Duration) {
+
+	delta := time.Duration(rand.Int63n(int64(math.Round(float64(duration) * deltaPercent))))
+
+	if rand.Intn(100)%2 == 1 {
+		ret = duration + delta
+	} else {
+		ret = duration - delta
+	}
+	return
 }
 
 func GetRandomDuration(minDuration time.Duration, maxDuration time.Duration) time.Duration {
