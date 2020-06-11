@@ -3,7 +3,7 @@ package logging
 import (
 	"fmt"
 	"github.com/rs/zerolog"
-	"gitlab.livedev.shika2019.com/go/common/errorkit"
+	"gitlab.livedev.shika2019.com/go/util/errorkit"
 	"os"
 	"strings"
 	"time"

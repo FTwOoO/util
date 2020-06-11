@@ -3,7 +3,7 @@ package mem
 import (
 	"bytes"
 	"github.com/golang/protobuf/proto"
-	"gitlab.livedev.shika2019.com/go/common/logging"
+	"gitlab.livedev.shika2019.com/go/util/logging"
 	"reflect"
 	"sync"
 )

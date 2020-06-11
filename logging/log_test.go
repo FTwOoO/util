@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"gitlab.livedev.shika2019.com/go/common/errorkit"
+	"gitlab.livedev.shika2019.com/go/util/errorkit"
 	"os"
 	"testing"
 )
@@ -34,7 +34,7 @@ func TestLogger2_LogEvent(t *testing.T) {
 
 func TestLoggerImp_WithFields(t *testing.T) {
 	logger := NewJsonLogger("info").WithFields(map[string]interface{}{
-		KeyScope: "mongodb",
+		KeyScope:   "mongodb",
 		KeyService: "im",
 	})
 	logger.Infow("key", "haha")
