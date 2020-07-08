@@ -153,3 +153,20 @@ func RandomTimeEvent(delay time.Duration, N int) <-chan time.Duration {
 
 	return ch
 }
+
+/*
+	在duration内获取N个时间点
+*/
+func RandomTimesInDuration(N int, duration time.Duration) []time.Duration {
+	if N == 1 {
+		return []time.Duration{duration}
+	}
+
+	triggerPoint := make([]time.Duration, N)
+	for i := 0; i < N; i += 1 {
+		triggerPoint[i] = time.Duration(rand.Int63n(int64(duration)))
+	}
+
+	sort.Sort(TimeDurationSlice(triggerPoint))
+	return triggerPoint
+}

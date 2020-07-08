@@ -43,3 +43,8 @@ func TestRandomTimeEvent(t *testing.T) {
 func TestGetRandomDurationUpOrDown(t *testing.T) {
 	t.Log(GetRandomDurationUpOrDown(1*time.Minute, 0.1))
 }
+
+func TestRandomTimesInDuration(t *testing.T) {
+	times := RandomTimesInDuration(3, 2*time.Second)
+	t.Log(times)
+}
