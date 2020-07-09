@@ -158,6 +158,11 @@ func (this *loggerImp) LogError(err error) {
 }
 
 func (this *loggerImp) logW(logEvent *zerolog.Event, args ...interface{}) {
+	if len(args)%2 != 0 {
+		logEvent.Msg("invalidArgumentNums")
+		return
+	}
+
 	for i := 0; i < len(args); i += 2 {
 		key, ok := args[i].(string)
 		if !ok {
