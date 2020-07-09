@@ -39,3 +39,15 @@ func TestLoggerImp_WithFields(t *testing.T) {
 	})
 	logger.Infow("key", "haha")
 }
+
+func TestLoggerInvalidArgumentsNum(t *testing.T) {
+	defer func() {
+		e := recover()
+		if e != nil {
+			t.Fatal(e.(string))
+		}
+	}()
+
+	logger := NewJsonLogger("info")
+	logger.Infow("key")
+}
