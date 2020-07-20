@@ -99,6 +99,11 @@ func (this *StructuredError) AddOp(op string) Error {
 	return this
 }
 
+func (this *StructuredError) SetEvent(e string) Error {
+	this.Params["event"] = e
+	return this
+}
+
 // funcname removes the path prefix component of a function's name reported by func.Name().
 func funcname(name string) string {
 	i := strings.LastIndex(name, "/")

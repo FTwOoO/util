@@ -9,6 +9,7 @@ type Error interface {
 	SetCode(code int) Error
 	SetMessage(msg string) Error
 	SetScope(c ErrorScope) Error
+	SetEvent(e string) Error
 	AddParam(k string, v interface{}) Error
 
 	GetLine() string
