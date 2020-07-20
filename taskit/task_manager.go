@@ -64,8 +64,7 @@ func (this *taskManager) Run(taskId string, f func() (data interface{}, err erro
 		var err error
 		data, err = f()
 		if err != nil {
-			logging.Log.Infow(logging.KeyScope, "gotask", logging.KeyEvent, "taskError", "id", task.Id, "err", err.Error())
-			logging.Log.LogError(err)
+			err = errorkit.WrapError(err).SetScope("gotask").AddParam("taskId", task.Id)
 		} else {
 			logging.Log.Infow(logging.KeyScope, "gotask", logging.KeyEvent, "taskEnd", "id", task.Id)
 		}

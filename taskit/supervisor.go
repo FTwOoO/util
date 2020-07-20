@@ -61,10 +61,9 @@ func RunOneByOne(
 		_, err := defaultTaskManager.Wait(jobName)
 		if err != nil {
 			logging.Log.LogError(err)
-		}
-
-		if cf.lockRelease != nil {
-			_ = cf.lockRelease()
+			if cf.lockRelease != nil {
+				_ = cf.lockRelease()
+			}
 		}
 
 		if cf.delay != nil {
