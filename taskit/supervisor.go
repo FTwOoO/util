@@ -68,6 +68,7 @@ func RunOneByOne(
 		}
 
 		if cf.delay != nil {
+			logging.Log.Infow(logging.KeyEvent, "sleepForJob", "job", jobName, "sleepDuration", cf.delay())
 			<-time.After(cf.delay())
 		}
 	}
