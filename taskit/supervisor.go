@@ -52,7 +52,11 @@ func RunOneByOne(
 			}
 
 			if !success {
-				time.Sleep(10 * time.Second)
+				if cf.delay != nil {
+					<-time.After(cf.delay() / 10)
+				} else {
+					<-time.After(10 * time.Second)
+				}
 				continue
 			}
 		}
