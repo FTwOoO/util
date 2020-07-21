@@ -100,8 +100,7 @@ func (this *StructuredError) AddOp(op string) Error {
 }
 
 func (this *StructuredError) SetEvent(e string) Error {
-	this.Params["event"] = e
-	return this
+	return this.AddParam("event", e)
 }
 
 // funcname removes the path prefix component of a function's name reported by func.Name().
