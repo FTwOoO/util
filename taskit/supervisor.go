@@ -46,12 +46,12 @@ func RunOneByOne(
 	for {
 		if cf.aquireLock != nil {
 			success, err := cf.aquireLock()
-			if err != nil {
-				logging.Log.LogError(err)
-				return
-			}
 
-			if !success {
+			if !success || err != nil {
+				if err != nil {
+					logging.Log.Errorw(logging.KeyEvent, "fetchLockFail", "err", err)
+				}
+
 				if cf.delay != nil {
 					<-time.After(cf.delay() / 10)
 				} else {
@@ -64,8 +64,9 @@ func RunOneByOne(
 		defaultTaskManager.Run(jobName, f)
 		_, err := defaultTaskManager.Wait(jobName)
 		if err != nil {
-			logging.Log.LogError(err)
+			logging.Log.Infow(logging.KeyEvent, "jobFail", "job", jobName, "err", err)
 			if cf.lockRelease != nil {
+				logging.Log.Infow(logging.KeyEvent, "jobLockRelease", "job", jobName)
 				_ = cf.lockRelease()
 			}
 		}
