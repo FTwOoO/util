@@ -6,10 +6,12 @@ import (
 )
 
 func RunInBackend(f func()) {
-	defer func() {
-		if x := recover(); x != nil {
-			logging.Log.Fatalw(logging.KeyEvent, "panic", "msg", x, "stack", string(debug.Stack()))
-		}
+	go func() {
+		defer func() {
+			if x := recover(); x != nil {
+				logging.Log.Fatalw(logging.KeyEvent, "panic", "msg", x, "stack", string(debug.Stack()))
+			}
+		}()
+		f()
 	}()
-	f()
 }
