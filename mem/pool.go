@@ -3,7 +3,7 @@ package mem
 import (
 	"bytes"
 	"github.com/golang/protobuf/proto"
-	"gitlab.livedev.shika2019.com/go/util/logging"
+	"github.com/rexue2019/util/logging"
 	"reflect"
 	"sync"
 )
@@ -107,11 +107,11 @@ func (this *messagePool) PutObject(msg interface{}) {
 	pool.Put(msg)
 }
 
-func PoolGetObject(msg interface{}) (interface{}) {
+func PoolGetObject(msg interface{}) interface{} {
 	return _messagePool.GetByObject(msg)
 }
 
-func PoolGetObjectByType(t reflect.Type) (interface{}) {
+func PoolGetObjectByType(t reflect.Type) interface{} {
 	return _messagePool.GetByType(t)
 }
 

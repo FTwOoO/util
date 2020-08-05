@@ -1,8 +1,8 @@
 package taskit
 
 import (
-	"gitlab.livedev.shika2019.com/go/util/errorkit"
-	"gitlab.livedev.shika2019.com/go/util/logging"
+	"github.com/rexue2019/util/errorkit"
+	"github.com/rexue2019/util/logging"
 	"sync"
 )
 

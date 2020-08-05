@@ -2,8 +2,8 @@ package logging
 
 import (
 	"fmt"
+	"github.com/rexue2019/util/errorkit"
 	"github.com/rs/zerolog"
-	"gitlab.livedev.shika2019.com/go/util/errorkit"
 	"os"
 	"strings"
 	"time"

@@ -1,8 +1,8 @@
 package text_green
 
 import (
-	"gitlab.livedev.shika2019.com/go/util/text_green/cn_text"
-	"gitlab.livedev.shika2019.com/go/util/text_green/word_filter"
+	"github.com/rexue2019/util/text_green/cn_text"
+	"github.com/rexue2019/util/text_green/word_filter"
 )
 
 var defaultTrie *word_filter.Trie

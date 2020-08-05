@@ -2,9 +2,9 @@ package logging
 
 import (
 	"fmt"
+	"github.com/rexue2019/util/errorkit"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"gitlab.livedev.shika2019.com/go/util/errorkit"
 	"os"
 	"testing"
 )

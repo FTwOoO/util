@@ -1,7 +1,7 @@
 package taskit
 
 import (
-	"gitlab.livedev.shika2019.com/go/util/logging"
+	"github.com/rexue2019/util/logging"
 	"time"
 )
 
