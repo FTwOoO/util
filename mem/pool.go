@@ -2,8 +2,8 @@ package mem
 
 import (
 	"bytes"
+	"github.com/FTwOoO/util/logging"
 	"github.com/golang/protobuf/proto"
-	"github.com/rexue2019/util/logging"
 	"reflect"
 	"sync"
 )

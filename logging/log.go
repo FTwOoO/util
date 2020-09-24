@@ -2,7 +2,7 @@ package logging
 
 import (
 	"fmt"
-	"github.com/rexue2019/util/errorkit"
+	"github.com/FTwOoO/util/errorkit"
 	"github.com/rs/zerolog"
 	"os"
 	"strings"

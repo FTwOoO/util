@@ -1,8 +1,8 @@
 package text_green
 
 import (
-	"github.com/rexue2019/util/text_green/cn_text"
-	"github.com/rexue2019/util/text_green/word_filter"
+	"github.com/FTwOoO/util/text_green/cn_text"
+	"github.com/FTwOoO/util/text_green/word_filter"
 )
 
 var defaultTrie *word_filter.Trie

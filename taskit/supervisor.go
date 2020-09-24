@@ -1,7 +1,7 @@
 package taskit
 
 import (
-	"github.com/rexue2019/util/logging"
+	"github.com/FTwOoO/util/logging"
 	"time"
 )
 

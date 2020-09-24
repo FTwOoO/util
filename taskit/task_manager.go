@@ -1,8 +1,8 @@
 package taskit
 
 import (
-	"github.com/rexue2019/util/errorkit"
-	"github.com/rexue2019/util/logging"
+	"github.com/FTwOoO/util/errorkit"
+	"github.com/FTwOoO/util/logging"
 	"sync"
 )
 

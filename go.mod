@@ -1,4 +1,4 @@
-module github.com/rexue2019/util
+module github.com/FTwOoO/util
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
